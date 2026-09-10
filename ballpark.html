@@ -5,7 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1LtGmbNAWfjd0M37k7yOG7Z8f35VEF3GT=w180-h180">
 <title>Ballpark Wizard</title>
-<script>location.replace("https://script.google.com/macros/s/AKfycbxdGw0hMnUXPOm2N8YbW0vfRr4GsZlkugOzhqo-US-i4yDnLFXkspHqn2nEbNSfobL2/exec?tipo=ballpark");</script>
+<style>
+  body{font-family:-apple-system,Helvetica,Arial,sans-serif;margin:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    height:100vh;background:#1a1a2e;color:#fff;text-align:center;
+    padding:24px;box-sizing:border-box}
+  h2{margin:0 0 12px}
+  p{opacity:.8;font-size:14px;max-width:320px;line-height:1.4}
+  a.btn{margin-top:24px;background:#f0a500;color:#1a1a2e;font-weight:bold;
+    padding:14px 28px;border-radius:8px;text-decoration:none;font-size:17px}
+</style>
+<script>
+  if (window.navigator.standalone) {
+    location.replace("https://script.google.com/macros/s/AKfycbxdGw0hMnUXPOm2N8YbW0vfRr4GsZlkugOzhqo-US-i4yDnLFXkspHqn2nEbNSfobL2/exec?tipo=ballpark");
+  }
+</script>
 </head>
-<body>Cargando…</body>
+<body>
+  <h2>Ballpark Wizard</h2>
+  <p>Para que el ícono salga bien: tocá <b>Compartir → Agregar a Inicio</b>
+  ahora, ANTES de tocar el botón de abajo.</p>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbxdGw0hMnUXPOm2N8YbW0vfRr4GsZlkugOzhqo-US-i4yDnLFXkspHqn2nEbNSfobL2/exec?tipo=ballpark">Abrir el wizard →</a>
+</body>
 </html>

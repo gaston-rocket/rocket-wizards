@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link id="icon" rel="apple-touch-icon" href="">
+<title>Preview ícono</title>
+<style>
+  body{font-family:-apple-system,Helvetica,Arial,sans-serif;margin:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:100vh;background:#1a1a2e;color:#fff;text-align:center;
+    padding:24px;box-sizing:border-box}
+  h2{margin:0 0 4px}
+  p{opacity:.8;font-size:14px;max-width:320px;line-height:1.4}
+  img#big{width:120px;height:120px;border-radius:22px;margin:16px 0;
+    box-shadow:0 4px 16px rgba(0,0,0,.4)}
+</style>
+<script>
+  var icons = {
+    "1": "https://lh3.googleusercontent.com/d/1piM_S3bmzblB0wrKbMJCL5bABzID2gAs=w180-h180",
+    "2": "https://lh3.googleusercontent.com/d/1FU6Q831rH4Cz2xO_jbVSbNfu3fHvsmDH=w180-h180",
+    "3": "https://lh3.googleusercontent.com/d/1GhAcaX3iqlBAn0kwmFHiep28FDXjZQDv=w180-h180",
+    "4": "https://lh3.googleusercontent.com/d/1N989qbFH-WauDmjazqKVquNi8jMdraXj=w180-h180"
+  };
+  var n = new URLSearchParams(location.search).get("icon") || "1";
+  var url = icons[n] || icons["1"];
+  document.getElementById("icon").href = url;
+  window.onload = function(){ document.getElementById("big").src = url; };
+</script>
+</head>
+<body>
+  <h2>Probando ícono #<span id="num"></span></h2>
+  <img id="big" src="">
+  <p>Tocá <b>Compartir → Agregar a Inicio</b> ahora para probar este ícono.
+  Después borralo y volvé acá con otro número para probar el siguiente.</p>
+  <script>document.getElementById("num").textContent = n;</script>
+</body>
+</html>

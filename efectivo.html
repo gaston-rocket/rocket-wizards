@@ -7,36 +7,51 @@
 <title>Cash & Contracts</title>
 <style>
   body{font-family:-apple-system,Helvetica,Arial,sans-serif;margin:0;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    height:100vh;background:#1a1a2e;color:#fff;text-align:center;
-    padding:24px;box-sizing:border-box}
-  h2{margin:0 0 12px}
-  p{opacity:.8;font-size:14px;max-width:320px;line-height:1.4}
-  a.btn{margin-top:24px;background:#f0a500;color:#1a1a2e;font-weight:bold;
-    padding:14px 28px;border-radius:8px;text-decoration:none;font-size:17px}
-  .err{color:#ff8a80;font-size:13px;margin-top:16px}
+    background:#f5f6fa;color:#1f3864}
+  .logowrap{background:#ec306a;padding:32px 20px 24px;text-align:center}
+  .logowrap img{max-height:160px;max-width:88%}
+  .top{background:#8b93a3;color:#fff;padding:18px 20px;display:flex;
+    align-items:center;gap:10px}
+  .top .ico svg{display:block}
+  .top h1{font-size:16px;margin:0;font-weight:bold;text-transform:uppercase}
+  .body{padding:26px 20px 30px;text-align:center}
+  p{opacity:.8;font-size:14px;max-width:320px;line-height:1.4;margin:0 auto}
+  a.btn{display:inline-block;margin-top:24px;background:#ec306a;color:#fff;
+    font-weight:bold;padding:14px 28px;border-radius:8px;text-decoration:none;
+    font-size:17px}
+  .err{color:#b91c1c;font-size:13px;margin-top:16px}
 </style>
 <script>
   var WIZARD_URL = "https://script.google.com/macros/s/AKfycbxdGw0hMnUXPOm2N8YbW0vfRr4GsZlkugOzhqo-US-i4yDnLFXkspHqn2nEbNSfobL2/exec";
   var p = new URLSearchParams(location.search).get("p");
   var destino = p ? (WIZARD_URL + "?p=" + encodeURIComponent(p)) : "";
-  if (destino) {
-    document.addEventListener("DOMContentLoaded", function(){
-      document.getElementById("btn").href = destino;
-    });
-    if (window.navigator.standalone) {
-      location.replace(destino);
-    }
+  if (destino && window.navigator.standalone) {
+    location.replace(destino);
   }
 </script>
 </head>
 <body>
-  <h2>Cash & Contracts</h2>
-  <p id="msg">Para que el ícono salga bien: tocá <b>Compartir → Agregar a Inicio</b>
-  ahora, ANTES de tocar el botón de abajo.</p>
-  <a class="btn" id="btn" href="#">Abrir →</a>
+  <div class="logowrap">
+    <img src="https://lh3.googleusercontent.com/d/1jn6BiUlMeEgtQYpOYaMOqS-PHGvGzs7M=w400">
+  </div>
+  <div class="top">
+    <div class="ico">
+      <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="2" width="12" height="20" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
+        <circle cx="12" cy="18.3" r="1" fill="#fff"/>
+      </svg>
+    </div>
+    <h1>Rocket Mobile Uploads</h1>
+  </div>
+  <div class="body">
+    <p id="msg">Para que el ícono salga bien: tocá <b>Compartir → Agregar a Inicio</b>
+    ahora, ANTES de tocar el botón de abajo.</p>
+    <a class="btn" id="btn" href="#">Abrir →</a>
+  </div>
   <script>
-    if (!p) {
+    if (destino) {
+      document.getElementById("btn").href = destino;
+    } else {
       document.getElementById("msg").textContent = "Este link no tiene proyecto asociado (falta ?p= en la URL).";
       document.getElementById("btn").style.display = "none";
     }
